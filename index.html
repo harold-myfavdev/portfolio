@@ -11,14 +11,14 @@
 <body>
     <header>
         <div class="container">
-            <nav>
-                <ul>
-                    <!-- <li><a href="/">INDEX</a></li> -->
+            <!-- <nav>
+                <ul>                    
                     <li><a class="nav-link" href="/">HOME</a></li>
                     <li><a class="nav-link" href="/page1">PAGE1</a></li>
                     <li><a class="nav-link" href="/page2">PAGE2</a></li>
                 </ul>
-            </nav>            
+            </nav>             -->
+            <navbar-component></navbar-component>
         </div>
     </header>
     <main>
@@ -28,7 +28,14 @@
     <footer>
         <div class="container"></div>        
     </footer>
+<!-- Web Components -->
+    <script src="/view/components/navbar.js"></script>
+
+<!-- Client Side Router -->
     <script src="/js/router.js"></script>
+    
+<!-- Service Worker to Cache Resources and to Persist Client Side Routes upon Reload/Refresh -->
+<!-- Fresh Cache is Updated in the Background by Service Worker-->
     <script src="/service-worker.js"></script>
 </body>
 </html>

@@ -42,8 +42,8 @@ if ('serviceWorker' in navigator) {
       event.respondWith(
         caches.match(event.request).then(cachedResponse => {
           // const urlParts = url.split('/');
-          // console.log(urlParts)
-          // console.log(url)
+          // console.log(urlParts);
+          console.log(url);
           if (cachedResponse) {
             // Return cached resource if available
             fetchAndUpdateCache(event.request);

@@ -8,46 +8,84 @@ if ('serviceWorker' in navigator) {
       });
   }
 
-const CACHE_NAME = 'my-cache-v1'; // Name your cache
-const urlsToCache = [
-  '/', // Root HTML file
-  '/index.html',
-  '/css/main.css',
-  '/css/index.css',
-  '/js/main.js',
-  '/service-worker.js',
-  '/js/router.js',
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache); // Pre-cache resources
-      })
-  );
-});
-self.addEventListener('fetch', event => {
-    event.respondWith(
-      caches.match(event.request)
-        .then(response => {
-          // If the request is in the cache, return the cached version
-          if (response) {
-            return response;
-          }
+  const CACHE_NAME = 'my-cache-v1'; // Name your cache
+  const urlsToCache = [
+    '/', // Root HTML file
+    '/index.html',
+    '/css/main.css',
+    '/css/index.css',
+    '/js/main.js',
+    // '/service-worker.js',
+    '/js/router.js',
+  ];
   
-          // Otherwise, fetch the resource from the network
-          return fetch(event.request).then(networkResponse => {
-            // Optionally, cache the new resource
-            return caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, networkResponse.clone());
-              return networkResponse;
-            });
-          });
+  // Install event: Pre-cache essential resources
+  self.addEventListener('install', event => {
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          console.log('Opened cache');
+          return cache.addAll(urlsToCache); // Pre-cache resources
         })
     );
   });
+  
+  // Fetch event: Handle dynamic paths
+  self.addEventListener('fetch', event => {
+    // const url = new URL(event.request.url);
+  
+    event.respondWith(
+      caches.match(event.request).then(cachedResponse => {
+        // const urlParts = url.split('/');
+        // console.log(urlParts)
+        // console.log(url)
+        if (cachedResponse) {
+          // Return cached resource if available
+          fetchAndUpdateCache(event.request);
+          return cachedResponse;
+        }
+  
+        // Handle dynamic paths by falling back to `index.html` for navigation requests
+        if (event.request.mode === 'navigate') {
+          return caches.match('/index.html'); // Serve the SPA's main HTML file
+        }
+  
+        // Fetch the resource from the network and cache it for future requests
+        return fetch(event.request)
+          .then(networkResponse => {
+            return caches.open(CACHE_NAME).then(cache => {
+              // Cache the resource for future use
+              cache.put(event.request, networkResponse.clone());
+              return networkResponse;
+            });
+          })
+          .catch(error => {
+            console.error('Fetch failed; returning offline fallback:', error);
+            // Optionally serve a fallback page or resource
+            return caches.match('/offline.html'); // Ensure you cache this during the install phase
+          });
+      })
+    );
+  });
+
+  // Fetch and update the cache with the latest response from the network
+function fetchAndUpdateCache(request) {
+    // Fetch from the network
+    fetch(request).then(networkResponse => {
+      if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+        return;
+      }
+  
+      // Open the cache and update with the new response
+      caches.open(CACHE_NAME).then(cache => {
+        cache.put(request, networkResponse.clone());
+      });
+    }).catch(error => {
+      console.error('Failed to fetch and update cache:', error);
+    });
+  }
+  
+  // Activate event: Cleanup old caches
   self.addEventListener('activate', event => {
     const cacheWhitelist = [CACHE_NAME]; // Keep only the current cache
   
@@ -64,4 +102,4 @@ self.addEventListener('fetch', event => {
       })
     );
   });
-    
+  

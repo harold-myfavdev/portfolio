@@ -4,7 +4,7 @@
 //         e.preventDefault();
 //         urlRoute(e);
 //     })
-
+   
 const getNav = document.getElementsByTagName("nav")[0].addEventListener("click", (e)=> {
     const { target } = e;
     if (!target.matches("nav ul li a")){
@@ -76,3 +76,11 @@ window.onpopstate = urlLocationHandler;
 window.route = urlRoute;
 // call the urlLocationHandler function to handle the initial url
 urlLocationHandler();
+
+// document.addEvent
+// 0 0Listener("DOMContentLoaded", () => {
+    // $(function(){
+    //   document.querySelector('#test').innerHTML = "test";
+    // });
+    //run router again
+    // });

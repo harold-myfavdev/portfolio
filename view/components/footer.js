@@ -58,3 +58,6 @@
 
   // Register the custom element
   customElements.define('footer-component', FooterComponent);
+  
+  // Set the current year dynamically
+  document.getElementById('year').textContent = new Date().getFullYear();

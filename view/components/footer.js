@@ -32,16 +32,9 @@
             <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
               <h3 style="margin-bottom: 10px; color: #00adb5;">Contact</h3>
               <p>Email: <a href="mailto:harold@myfav.dev" style="color: #f2f2f2; text-decoration: none;">harold@myfav.dev</a></p>
-              <p>Phone: <a href="tel:+1234567890" style="color: #f2f2f2; text-decoration: none;">+123 456 7890</a></p>
               <div style="margin-top: 10px;">
-                <a href="https://github.com/yourprofile" target="_blank" style="color: #f2f2f2; margin-right: 15px; text-decoration: none;">
+                <a href="https://github.com/haroldsr01" target="_blank" style="color: #f2f2f2; margin-right: 15px; text-decoration: none;">
                   <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" style="color: #f2f2f2; margin-right: 15px; text-decoration: none;">
-                  <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://twitter.com/yourhandle" target="_blank" style="color: #f2f2f2; text-decoration: none;">
-                  <i class="fab fa-twitter"></i> Twitter
                 </a>
               </div>
             </div>

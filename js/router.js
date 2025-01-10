@@ -1,6 +1,6 @@
-document.getElementsByTagName("nav")[0].addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
     const { target } = e;
-    if (!target.matches("nav ul li a")) return;
+    if (!target.matches("li a")) return;
     e.preventDefault();
     urlRoute(e);
 });

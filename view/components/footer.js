@@ -8,12 +8,12 @@
     connectedCallback() {
       this.innerHTML = `
         <footer class="px-5 py-3">
-          <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+          <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 1.5em">
             <!-- About Section -->
             <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
               <h3 style="margin-bottom: 10px; color: #00adb5;">About Me</h3>
               <p>
-                Hi, I’m <strong>[Your Name]</strong>, a freelance developer creating scalable, user-friendly, and modern web solutions. Let's bring your ideas to life!
+                Hi, I’m <strong>Harold</strong>, a self-taught developer and a proud member of the PWD community, passionate about building apps that solve real-world problems. Let's bring your ideas to life!
               </p>
             </div>
 

@@ -49,16 +49,9 @@
 
           <!-- Bottom Section -->
           <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 10px; text-align: center;">
-            <p style="margin: 0;">© <span id="year"></span> [Your Name]. All Rights Reserved. | <a href="/privacy-policy" style="color: #00adb5; text-decoration: none;">Privacy Policy</a></p>
+            <p class="m-0">© <span id="year"></span> myfav. All Rights Reserved. | <a href="/privacy-policy" style="color: #00adb5; text-decoration: none;">Privacy Policy</a></p>
           </div>
         </footer>
-
-        <!-- Optional: Add Font Awesome for Icons -->
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        <script>
-          // Set the current year dynamically
-          document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
       `;       
     }
   }

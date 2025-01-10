@@ -1,3 +1,10 @@
+body, .cookie-regular {
+  font-family: "Cookie", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: larger;
+}
+
 footer {
   background-color: #1a1a1a; 
   color: #f2f2f2;

@@ -31,7 +31,7 @@
             <!-- Contact Section -->
             <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
               <h3 style="margin-bottom: 10px; color: #00adb5;">Contact</h3>
-              <p>Email: <a href="mailto:harold@myfav.dev" style="color: #f2f2f2; text-decoration: none;">harold@myfav.dev</a></p>
+              <p>Email: <a href="mailto:haroldadvincula@myfav.dev" style="color: #f2f2f2; text-decoration: none;">haroldadvincula@myfav.dev</a></p>
               <div style="margin-top: 10px;">
                 <a href="https://github.com/haroldsr01" target="_blank" style="color: #f2f2f2; margin-right: 15px; text-decoration: none;">
                   <i class="fab fa-github"></i> GitHub

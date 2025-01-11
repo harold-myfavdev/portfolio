@@ -1,9 +1,9 @@
 <section class="text-center d-flex flex-column align-items-center justify-conent-center py-3" id="hero">
     <h1 class="mt-auto fw-bolder" >Welcome to My First App Venture</h1>
     <h2 class="fw-bolder">Let's bring your ideas to life!</h2>
-    <button class="btn btn-outline-success" type="button">Learn More</button>
+    <a class="btn btn-outline-success" type="button" href="#how-it-works">Learn More</a>
 </section>
-<section class="container text-center" id="how-it-works">
+<section class="text-center" id="how-it-works">
     <h2>How It Works</h2>
     <ol>
       <li>
@@ -28,7 +28,32 @@
       </li>
     </ol>
 </section>
-<section class="container text-center" id="sec_what">
+<section id="stats">
+    <h2>Our Achievements</h2>
+    <div class="stats-container">
+      <div class="stat-item">
+        <h3>25+</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Successful Projects</p>
+      </div>
+      <div class="stat-item">
+        <h3>15+</h3>
+        <p>Apps Launched</p>
+      </div>
+      <div class="stat-item">
+        <h3>3+</h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <h3>10,000+</h3>
+        <p>End Users Reached</p>
+      </div>
+    </div>
+</section> 
+<!-- <section class="container text-center" id="sec_what">
     <h2 class="">What Sets Us Apart?</h2>
     <ul class="">
       <li class="card border border-danger">
@@ -58,9 +83,29 @@
         <li><strong>Agile and Adaptable:</strong> We pride ourselves on delivering high-quality apps on time and staying responsive to your needs.</li>
         <li><strong>A Passion for Problem-Solving:</strong> No challenge is too big or too small – we thrive on making your app dreams come true.</li>
     </ul>
-</section>
+</section> -->
 
-<section class="container">
+<section class="container-fluid" id="letsbuild">
     <h2>Let’s Build Your First Venture Together</h2>
     <p>Take the first step towards building something extraordinary. With MyFirstAppVenture, you’re not just getting a developer – you’re gaining a partner who’s as invested in your success as you are.</p>
+</section> 
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.</p>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
 </section>
+  

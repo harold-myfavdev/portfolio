@@ -26,8 +26,8 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/portfolio">Portfolio</a>
                     </li>                    
-                  </ul>
-                  <button class="btn btn-outline-success" type="submit">Contact</button>
+                  </ul>                  
+                  <a class="btn btn-outline-success" type="button" href="#contact">Contact</a>
                 </div>
             </div>
           </nav>

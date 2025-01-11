@@ -11,9 +11,9 @@
           <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 1.5em">
             <!-- About Section -->
             <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-              <h3 style="margin-bottom: 10px; color: #00adb5;">About Me</h3>
+              <h3 style="margin-bottom: 10px; color: #00adb5;">My First App Venture</h3>
               <p>
-                Hi, I’m <strong>Harold</strong>, a self-taught developer and a proud member of the PWD community, passionate about building apps that solve real-world problems. Let's bring your ideas to life!
+                A dedicated platform that transforms your ideas into exceptional mobile and web applications, offering innovative solutions and a seamless development journey to bring your vision to life.
               </p>
             </div>
 

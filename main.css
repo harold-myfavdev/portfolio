@@ -146,7 +146,7 @@ ul.list-parent {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px 0px;    
+    /* padding: 10px 0px;     */
 }
 
 li.list-title {

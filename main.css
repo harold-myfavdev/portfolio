@@ -28,7 +28,7 @@ body {
 }
 
 body::before {
-    content: "";
+    content: var(--before-text, "");
     position: absolute;
     width: 100%;
     height: 100%;
@@ -204,4 +204,10 @@ footer ul {
 footer ul li {    
     padding: 4px 10px;
     flex-grow: 1;
+}
+
+#btn-html2pdf {
+    position: fixed;
+    top: 50px;
+    right: 100px;
 }

@@ -34,24 +34,43 @@ function generatePDF() {
     
 
     /* Set Options */
+    const width = 600; /* Preferred 600 */
+    const height  = 1504; /* Preferred 1504 */
+    var scale = 3; /* Preferred 1; Scale 2 (.3363); Scale 3 */    
+    const compStyle = getComputedStyle(body);
+    var marginRight = compStyle.getPropertyValue('margin-right');
+    const documentWidth = document.documentElement.clientWidth;
+    var x;
+    if (parseFloat(documentWidth) <= 600 ){ x = 0;};
+    switch (scale) {      
+      case 1: if (x != 0) x = parseFloat(marginRight)*.50; console.log(scale); break;
+      case 2: if (x != 0) x = parseFloat(marginRight)*.3355; console.log(scale); break;
+      case 3: if (x != 0) x = parseFloat(marginRight)*.25; console.log(scale); break;
+    }
+
+    console.log(marginRight);
+
     var opt = {        
         margin:       0,
-        pagebreak: { mode: 'avoid-all'},        
+        // pagebreak: { mode: 'avoid-all'},        
         filename:     'harold.webdev.pdf',
-        image:        { type: 'jpeg', quality: 1},
+        image:        { type: 'jpg', quality: 1},
         enableLinks: true,
         html2canvas:  { 
-            scale: 1, 
+            scale: scale, 
+            // dpi: 300,
             foreignObjectRendering: true,             
             scrollY: 0,
+            scrollX: 0,
             y: 0,     
-            width: 600,
-            height: 1504,     
+            x: x, /* Working on version 0.9.3 parseFloat(marginRight)/scale; Scale 1: marginRight Multiply by .50 ;Scale 2: marginRight Multiply by .3363; Scale 3: marginRight Multiply by .25 */
+            width: width, /* Working on version 0.9.3 width/scale */
+            height: height,  /* Working on version 0.9.3 height/scale */   
             logging: true,          
         },
         jsPDF: { 
             unit: 'px',             
-            format: [600, 1504], 
+            format: [width, height],             
             orientation: 'p', 
             hotfixes: ["px_scaling"] 
         }

@@ -41,7 +41,7 @@ function generatePDF() {
             // scrollY: -window.scrollY,
             scrollY: 0,
             y: 0,
-            // x: x,
+            // x: 0,
             // windowWidth: document.documentElement.scrollWidth,
             // windowHeight: document.documentElement.scrollHeight,            
             // windowWidth: 600,

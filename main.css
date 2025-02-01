@@ -24,8 +24,7 @@ body {
     padding: 0 50px;    
     line-height: 24px;
     text-align: justify;
-    border: 2px solid black;
-    display: grid;    
+    border: 2px solid black;    
 }
 
 body::before {
@@ -60,9 +59,6 @@ a:visited, a:link {
 /* Navbar Styles */
 
 header {  
-    grid-row: 1 / 2;
-    grid-column: 1 / 1 ;
-
     background-color: #333;
     padding: 10px 0px 0px 0px;            
     width: calc(100% + 100px);
@@ -103,10 +99,13 @@ nav ul li:hover {
 /* Main Body Styles */
 
 main {
-    grid-row: 2 / 3;
-    grid-column: 1 / 1 ;
+    position: relative;
 
     overflow: hidden;
+
+    padding: 0px 50px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
 }
 
 #projects a {
@@ -192,8 +191,6 @@ li {
 /* Footer Styles */
 
 footer {
-    grid-row: 3 / 4;
-
     background-color: #333;
     padding: 10px 50px;            
     color: white;   
@@ -215,15 +212,15 @@ footer ul li {
     flex-grow: 1;
 }
 
-#btn-html2pdf {
-    grid-column: 1 / 1 ;
-    grid-row: 2 / 3;
-    justify-self: end;
-    align-self: flex-start;
-    
-    width: 35px;
-    margin-top: 5px;
-    transform: translateX(42.5px);
+
+div.btn-container {
+    display: flex;
+    justify-content: flex-end;    
     position: fixed;
-    z-index: 99;
+    top: 125px;
+    right: max(3vw, calc(50% - 290px));            
+}
+
+div#btn-html2pdf {        
+    width: 35px;    
 }

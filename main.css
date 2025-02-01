@@ -99,10 +99,7 @@ nav ul li:hover {
 /* Main Body Styles */
 
 main {
-    position: relative;
-
     overflow: hidden;
-
     padding: 0px 50px;
     width: calc(100% + 100px);
     margin-left: -50px;
@@ -151,7 +148,7 @@ strong {
 ul.list-parent {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-start;    
     flex-wrap: wrap;
     gap: 10px;
     /* padding: 10px 0px;     */
@@ -176,6 +173,10 @@ ul.list-parent > li {
     justify-content: flex-start;
     flex-direction: column;
     row-gap: 10px;
+}
+
+li:has(svg) {
+    justify-self: center;
 }
 
 li > svg {
@@ -218,7 +219,7 @@ div.btn-container {
     justify-content: flex-end;    
     position: fixed;
     top: 125px;
-    right: max(3vw, calc(50% - 290px));            
+    right: max(calc(50% - 290px), calc(100% - 98vw));            
 }
 
 div#btn-html2pdf {        

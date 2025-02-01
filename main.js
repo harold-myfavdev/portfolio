@@ -1,73 +1,67 @@
+/* HTML2PDF Generator */
 function generatePDF() {
-    // const pdf = document.getElementsByTagName('main')[0];
-    const pdf = document.body;
-    var w = pdf.scrollWidth;
-    var h = pdf.scrollHeight;
-    var x = window.getComputedStyle(pdf).marginLeft;
-    
-     /* Remove elements before generating pdf */
-    // const svgs = document.querySelectorAll('svg');
-    // svgs.forEach((svg) => svg.setAttribute('data-html2canvas-ignore','true'));
-
+     /* Tag elements that will be ignored*/
     const btn = document.querySelector('button');
     btn.setAttribute('data-html2canvas-ignore','true');
 
     const copyright = document.querySelector('footer p');
     copyright.setAttribute('data-html2canvas-ignore','true');
 
-    /* Reset/Remove unprintable and incompatible styles */
-    const strongTags = document.querySelectorAll('strong');
-    // strongTags.forEach((strong) => strong.style.backgroundImage = 'none');
+    const svgs = document.querySelectorAll('section#projects svg');    
+    svgs.forEach(svg => {
+        svg.setAttribute('data-html2canvas-ignore','true');
+    }); 
 
+    /* Temporary Remove Elements before generating pdf */
+    svgs.forEach(svg => {
+        svg.style.display = "none";        
+    })    
+
+    /* Temporary set properties before generating pdf */
     const body = document.body;
     body.style.setProperty("--before-text", null);
     body.style.backgroundColor = 'white';
     body.style.overflow = 'hidden';
     body.style.width = '600px';
-    // body.style.margin = 0;
-    
 
     /* Set Options */
-    var opt = {
-        // margin:       [0, .5, .5, .5],
+    var opt = {        
         margin:       0,
         pagebreak: { mode: 'avoid-all'},        
         filename:     'myfile.pdf',
         image:        { type: 'png'},
         html2canvas:  { 
             scale: 1, 
-            foreignObjectRendering: true, 
-            // scrollX: -window.scrollX,
-            // scrollY: -window.scrollY,
+            foreignObjectRendering: true,             
             scrollY: 0,
-            y: 0,
-            // x: 0,
-            // windowWidth: document.documentElement.scrollWidth,
-            // windowHeight: document.documentElement.scrollHeight,            
-            // windowWidth: 600,
-            // windowHeight: 1504,            
-            // windowWidth: document.documentElement.offsetWidth,
-            // windowHeight: document.documentElement.offsetHeight,            
-            // width: pdf.clientWidth,
-            // height: pdf.clientHeight,                
+            y: 0,     
             width: 600,
             height: 1504,                
         },
         jsPDF: { 
-            unit: 'px', 
-            // format: [w, h], 
+            unit: 'px',             
             format: [600, 1504], 
             orientation: 'p', 
             hotfixes: ["px_scaling"] 
         }
       };
     
+    /* Use Async Await to Restore Properties of after Generating PDF */
     async function convert2pdf () {
-        await html2pdf().set(opt).from(pdf).save();
+        await html2pdf().set(opt).from(body).save();
         body.style.backgroundColor = '#00000081';
         body.style.overflow = 'scroll';
         body.style.width = '100%';
-        // strongTags.forEach((strong) => strong.style.backgroundImage = 'linear-gradient(0, #ffe359, #ffe359) ');
+        svgs.forEach(svg => {
+            svg.style.display = "inline";        
+        })    
     }
     convert2pdf();    
   } 
+/* End HTML2PDF Generator */
+
+/* Function for Current Year */
+const currentYear = new Date().getFullYear();
+const getYearEl = document.querySelector('.year');
+getYearEl.innerHTML = currentYear;
+/* End Function for Current Year */

@@ -1,5 +1,5 @@
 /* HTML2PDF Generator */
-function generatePDF() {
+function generatePDF(scales) {
      /* Tag elements that will be ignored*/
     const btn = document.querySelector('button');
     btn.setAttribute('data-html2canvas-ignore','true');
@@ -36,7 +36,7 @@ function generatePDF() {
     /* Set Options */
     const width = 600; /* Preferred 600 */
     const height  = 1504; /* Preferred 1504 */
-    var scale = 3; /* Preferred 1; Scale 2 (.3363); Scale 3 */    
+    var scale = scales; /* Preferred 1; Scale 2 (.3363); Scale 3 */    
     const compStyle = getComputedStyle(body);
     var marginRight = compStyle.getPropertyValue('margin-right');
     const documentWidth = document.documentElement.clientWidth;

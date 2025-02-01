@@ -220,12 +220,15 @@ footer ul li {
 
 div.btn-container {
     display: flex;
-    justify-content: flex-end;    
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    row-gap: 10px;
     position: fixed;
     top: 125px;
-    right: max(calc(50% - 290px), calc(100% - 98vw));            
+    right: max(calc(50% - 290px), calc(100% - 98vw));          
 }
 
-div#btn-html2pdf {        
-    width: 35px;    
+div > button{        
+    width: 35px;        
 }

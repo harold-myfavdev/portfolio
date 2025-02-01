@@ -175,8 +175,12 @@ ul.list-parent > li {
     row-gap: 10px;
 }
 
-li:has(svg) {
-    justify-self: center;
+ul.list-parent:has(svg) {
+    justify-content: center;
+}
+
+li:has(> svg) {
+    text-align: center;
 }
 
 li > svg {

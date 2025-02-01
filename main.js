@@ -1,8 +1,8 @@
 /* HTML2PDF Generator */
 function generatePDF(scales) {
      /* Tag elements that will be ignored*/
-    const btn = document.querySelector('button');
-    btn.setAttribute('data-html2canvas-ignore','true');
+    const btns = document.querySelectorAll('button');
+    btns.forEach(btn => {btn.setAttribute('data-html2canvas-ignore','true');});
 
     // const copyright = document.querySelector('footer p');
     // copyright.setAttribute('data-html2canvas-ignore','true');

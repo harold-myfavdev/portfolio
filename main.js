@@ -7,15 +7,15 @@ function generatePDF() {
     const copyright = document.querySelector('footer p');
     copyright.setAttribute('data-html2canvas-ignore','true');
 
-    const svgs = document.querySelectorAll('section#projects svg');    
-    svgs.forEach(svg => {
-        svg.setAttribute('data-html2canvas-ignore','true');
-    }); 
+    // const svgs = document.querySelectorAll('section#projects svg');    
+    // svgs.forEach(svg => {
+    //     svg.setAttribute('data-html2canvas-ignore','true');
+    // }); 
 
     /* Temporary Remove Elements before generating pdf */
-    svgs.forEach(svg => {
-        svg.style.display = "none";        
-    })    
+    // svgs.forEach(svg => {
+    //     svg.style.display = "none";        
+    // })    
 
     /* Temporary set properties before generating pdf */
     const body = document.body;
@@ -52,9 +52,9 @@ function generatePDF() {
         body.style.backgroundColor = '#00000081';
         body.style.overflow = 'scroll';
         body.style.width = '100%';
-        svgs.forEach(svg => {
-            svg.style.display = "inline";        
-        })    
+        // svgs.forEach(svg => {
+        //     svg.style.display = "inline";        
+        // })    
     }
     convert2pdf();    
   } 

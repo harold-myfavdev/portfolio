@@ -21,14 +21,16 @@ function generatePDF(scales) {
     contactInfo.style.paddingTop = '0';
     
     /* Set Options */
-    const width = 600; /* Preferred 600 */
-    const height  = 1504; /* Preferred 1504 */
+    var width = 600; /* Preferred 600 */
+    var height  = 1504; /* Preferred 1504 */
     var scale = scales; /* Preferred 1; Scale 2 (.3363); Scale 3 */    
     const compStyle = getComputedStyle(body);
     var marginRight = compStyle.getPropertyValue('margin-right');
     const documentWidth = document.documentElement.clientWidth;
+    var bodyHeight = compStyle.getPropertyValue('height');
+    (height != parseFloat(bodyHeight)) ? height = parseFloat(bodyHeight) : height;
     var x;
-
+    console.log(height);
     /* Magic Numbers of HTML2PDF v0.10.2 Scale Option */
     if (parseFloat(documentWidth) <= 600 ){ x = 0;};
     switch (scale) {      
